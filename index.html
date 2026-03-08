@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pixel-Forge — Création de Sites Web</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -327,8 +328,12 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-grid .service-card[style*="grid-column"] { grid-column: auto !important; }
   }
 
   .service-card {
@@ -734,7 +739,9 @@
 
 <!-- ─── NAV ─── -->
 <nav>
-  <span class="nav-logo">PIXEL-FORGE</span>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Pixel-Forge" height="36" style="-webkit-filter:none;filter:none;">
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#process">Process</a></li>
@@ -787,12 +794,12 @@
     </div>
     <div class="divider"></div>
     <div>
+      <span class="card-tag">HTML/CSS/JS</span>
       <span class="card-tag">React</span>
-      <span class="card-tag">JavaScript</span>
       <span class="card-tag">WordPress</span>
-      <span class="card-tag">HTML/CSS</span>
-      <span class="card-tag">Firebase</span>
-      <span class="card-tag">Node.js</span>
+      <span class="card-tag">WooCommerce</span>
+      <span class="card-tag">Figma</span>
+      <span class="card-tag">GitHub Pages</span>
     </div>
   </div>
 </section>
@@ -805,9 +812,22 @@
 
   <div class="services-grid">
     <div class="service-card reveal">
+      <div class="service-icon icon-code">🏠</div>
+      <h3>Landing page sur mesure</h3>
+      <p>Une page unique, percutante et rapide pour présenter votre offre, événement ou activité. Idéal pour tester une idée ou démarrer rapidement.</p>
+      <ul class="service-features">
+        <li>Design 100% personnalisé</li>
+        <li>Chargement ultra-rapide</li>
+        <li>Formulaire de contact inclus</li>
+        <li>Responsive toutes tailles d'écran</li>
+        <li>Livraison en 1–2 semaines</li>
+      </ul>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
       <div class="service-icon icon-code">💻</div>
-      <h3>Site Web sur mesure</h3>
-      <p>Un site développé en code pur — HTML/CSS/JS ou React — pour une performance, une liberté de design et une originalité impossible à atteindre avec un constructeur.</p>
+      <h3>Site vitrine sur mesure</h3>
+      <p>Un site développé en code pur — HTML/CSS/JS. Design unique, performances maximales, originalité impossible à atteindre avec un constructeur.</p>
       <ul class="service-features">
         <li>Design 100% personnalisé, unique</li>
         <li>Performances et chargement optimisés</li>
@@ -817,29 +837,29 @@
       </ul>
     </div>
 
-    <div class="service-card reveal reveal-delay-1">
+    <div class="service-card reveal reveal-delay-2">
       <div class="service-icon icon-wp">🔷</div>
       <h3>Site WordPress</h3>
-      <p>La puissance de WordPress avec une mise en place soignée : thème sur mesure ou premium, plugins essentiels, et une prise en main facile pour vous en toute autonomie.</p>
+      <p>La puissance de WordPress avec une mise en place soignée : thème personnalisé, plugins essentiels, et autonomie totale pour gérer votre contenu.</p>
       <ul class="service-features">
         <li>Installation et configuration complète</li>
         <li>Thème personnalisé à votre image</li>
-        <li>Blog, e-commerce, portfolio…</li>
+        <li>Blog, portfolio, vitrine…</li>
         <li>Optimisation SEO de base incluse</li>
         <li>Formation à la prise en main</li>
       </ul>
     </div>
 
-    <div class="service-card reveal reveal-delay-2">
-      <div class="service-icon icon-seo">⚡</div>
-      <h3>Maintenance & Évolution</h3>
-      <p>Votre site évolue avec votre activité. Mises à jour, ajout de fonctionnalités, corrections, et petits coups de boost — je reste disponible bien après la livraison.</p>
+    <div class="service-card reveal reveal-delay-3" style="grid-column: 2; max-width: 100%;">
+      <div class="service-icon icon-seo">🛒</div>
+      <h3>Boutique en ligne</h3>
+      <p>Une petite boutique WooCommerce claire et efficace pour vendre vos produits en ligne. Idéal pour les commerces avec moins de 20 produits.</p>
       <ul class="service-features">
-        <li>Mises à jour sécurité & contenu</li>
-        <li>Ajout de pages ou sections</li>
-        <li>Modifications du design</li>
-        <li>Support et assistance réactive</li>
-        <li>Sauvegarde et monitoring</li>
+        <li>Catalogue produits organisé</li>
+        <li>Paiement par carte (Stripe / PayPal)</li>
+        <li>Gestion des commandes simple</li>
+        <li>Responsive et optimisé mobile</li>
+        <li>Formation à la gestion incluse</li>
       </ul>
     </div>
   </div>
@@ -992,15 +1012,15 @@
         <div class="tech-pill">HTML5</div>
         <div class="tech-pill">CSS3</div>
         <div class="tech-pill">JavaScript</div>
-        <div class="tech-pill">React</div>
-        <div class="tech-pill">Node.js</div>
-        <div class="tech-pill">Firebase</div>
         <div class="tech-pill">WordPress</div>
-        <div class="tech-pill">Git/GitHub</div>
+        <div class="tech-pill">WooCommerce</div>
+        <div class="tech-pill">Elementor</div>
         <div class="tech-pill">Figma</div>
-        <div class="tech-pill">REST API</div>
-        <div class="tech-pill">SQL</div>
+        <div class="tech-pill">Git/GitHub</div>
         <div class="tech-pill">Responsive</div>
+        <div class="tech-pill">SEO base</div>
+        <div class="tech-pill">REST API</div>
+        <div class="tech-pill">GitHub Pages</div>
       </div>
       <div class="divider" style="margin: 1.5rem 0;"></div>
       <div style="display:flex;align-items:center;gap:.75rem;">
@@ -1054,8 +1074,8 @@
     </form>
 
     <div style="margin-top:3rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;" class="reveal">
-      <a href="mailto:lgn.corentin@gmail.com" style="color:var(--muted);text-decoration:none;font-size:.9rem;display:flex;align-items:center;gap:.5rem;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">
-        📧 lgn.corentin@gmail.com
+      <a href="/cdn-cgi/l/email-protection#2e424940004d415c4b405a47406e49434f4742004d4143" style="color:var(--muted);text-decoration:none;font-size:.9rem;display:flex;align-items:center;gap:.5rem;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">
+        📧 <span class="__cf_email__" data-cfemail="1579727b3b767a67707b617c7b557278747c793b767a78">[email&#160;protected]</span>
       </a>
       <a href="https://github.com/0New2" target="_blank" style="color:var(--muted);text-decoration:none;font-size:.9rem;display:flex;align-items:center;gap:.5rem;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">
         💻 GitHub @0New2
@@ -1078,7 +1098,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ─── Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -1112,12 +1132,4 @@
   // ─── Form submit
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = '✓ Message envoyé !';
-    btn.style.background = 'linear-gradient(135deg, #00d4ff, #9b5de5)';
-    btn.disabled = true;
-    // Ici vous pourrez brancher EmailJS ou un backend
-  }
-</script>
-</body>
-</html>
+    const btn = e.target.querySelector('butto
