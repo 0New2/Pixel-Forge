@@ -593,7 +593,7 @@
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
     position: relative;
     overflow: hidden;
   }
@@ -601,7 +601,7 @@
   .tech-stack {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: .75rem;
+    gap: .6rem;
   }
 
   .tech-pill {
@@ -781,16 +781,16 @@
     <div class="hero-card-title">// Stack technique</div>
     <div class="stat-row">
       <div class="stat-item">
-        <div class="stat-num">3+</div>
+        <div class="stat-num" id="projects-count">2</div>
         <div class="stat-label">Projets livrés</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Approches</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">100%</div>
         <div class="stat-label">Sur mesure</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Réponse</div>
       </div>
     </div>
     <div class="divider"></div>
@@ -989,7 +989,7 @@
     </div>
 
     <div class="why-visual reveal">
-      <div class="section-tag" style="margin-bottom:1.5rem;">// Stack technique</div>
+      <div class="section-tag" style="margin-bottom:.75rem;">// Stack technique</div>
       <div class="tech-stack">
         <div class="tech-pill">HTML5</div>
         <div class="tech-pill">CSS3</div>
@@ -1081,6 +1081,11 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ─── Compteur projets livrés automatique
+  const projetsLivres = document.querySelectorAll('.status-done').length;
+  const counter = document.getElementById('projects-count');
+  if (counter) counter.textContent = projetsLivres;
+
   // ─── Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
