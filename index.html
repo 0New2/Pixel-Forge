@@ -241,11 +241,11 @@
     right: 5vw;
     top: 50%;
     transform: translateY(-50%);
-    width: 280px;
+    width: 380px;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 2rem;
     backdrop-filter: blur(8px);
     animation: float 5s ease-in-out infinite;
   }
@@ -273,26 +273,26 @@
   .stat-item { text-align: center; }
   .stat-num {
     font-family: 'Orbitron', monospace;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     font-weight: 900;
     background: var(--grad2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .stat-label { font-size: .7rem; color: var(--muted); margin-top: .2rem; }
+  .stat-label { font-size: .85rem; color: var(--muted); margin-top: .2rem; }
 
   .divider { height: 1px; background: var(--border); margin: 1rem 0; }
 
   .card-tag {
     display: inline-block;
-    padding: .25rem .7rem;
+    padding: .35rem .9rem;
     background: rgba(0,212,255,.08);
     border: 1px solid rgba(0,212,255,.2);
     border-radius: 999px;
-    font-size: .7rem;
+    font-size: .82rem;
     color: var(--cyan);
-    margin: .2rem;
+    margin: .25rem;
   }
 
   /* ─── SECTION COMMON ─── */
@@ -553,14 +553,15 @@
   #why { background: var(--navy2); }
 
   .why-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
   }
 
   .why-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
   }
 
@@ -601,7 +602,7 @@
 
   .tech-stack {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: .75rem;
   }
 
@@ -929,7 +930,7 @@
 
     <div class="project-card reveal reveal-delay-1">
       <div class="project-thumb" style="padding:0;overflow:hidden;">
-        <img src="projet-paintball.jpg" alt="7 Nains Paintball" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 10%;">
+        <img src="projet-paintball.jpg" alt="7 Nains Paintball" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 60%;">
         <span class="project-status status-done">✓ Livré</span>
       </div>
       <div class="project-body">
@@ -953,62 +954,65 @@
 <!-- ─── POURQUOI MOI ─── -->
 <section id="why">
   <div class="section-tag">// Pourquoi Pixel-Forge</div>
-  <h2 class="reveal">Ce qui fait la <span style="background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">différence</span></h2>
-  <p class="section-intro reveal">Pas une agence anonyme. Un développeur passionné qui s'implique vraiment dans votre projet.</p>
+  <div class="why-grid">
+    <div>
+      <h2 class="reveal">Ce qui fait<br>la <span style="background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">différence</span></h2>
+      <p class="section-intro reveal">Pas une agence anonyme. Un développeur passionné qui s'implique vraiment dans votre projet.</p>
+      <div class="why-list">
+        <div class="why-item reveal">
+          <div class="why-icon">🎯</div>
+          <div>
+            <h4>Interlocuteur unique</h4>
+            <p>Vous avez un seul contact du début à la fin. Pas de chef de projet intermédiaire, pas de perte d'information.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-1">
+          <div class="why-icon">💡</div>
+          <div>
+            <h4>Approche sur mesure</h4>
+            <p>Chaque projet est unique. Je prends le temps de comprendre votre activité avant d'écrire la première ligne de code.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="why-icon">⚡</div>
+          <div>
+            <h4>Réactivité</h4>
+            <p>Retours rapides, mises à jour régulières et disponibilité pour vos questions tout au long du projet.</p>
+          </div>
+        </div>
+        <div class="why-item reveal reveal-delay-3">
+          <div class="why-icon">💰</div>
+          <div>
+            <h4>Tarifs accessibles</h4>
+            <p>Les tarifs d'un indépendant sans les frais d'une agence. Devis transparent et adapté à votre budget.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="why-list" style="margin-bottom:3rem;">
-    <div class="why-item reveal">
-      <div class="why-icon">🎯</div>
-      <div>
-        <h4>Interlocuteur unique</h4>
-        <p>Vous avez un seul contact du début à la fin. Pas de chef de projet intermédiaire, pas de perte d'information.</p>
+    <div class="why-visual reveal">
+      <div class="section-tag" style="margin-bottom:.75rem;">// Stack technique</div>
+      <div class="tech-stack">
+        <div class="tech-pill">HTML5</div>
+        <div class="tech-pill">CSS3</div>
+        <div class="tech-pill">JavaScript</div>
+        <div class="tech-pill">WordPress</div>
+        <div class="tech-pill">WooCommerce</div>
+        <div class="tech-pill">Elementor</div>
+        <div class="tech-pill">Figma</div>
+        <div class="tech-pill">Git/GitHub</div>
+        <div class="tech-pill">Responsive</div>
+        <div class="tech-pill">SEO base</div>
+        <div class="tech-pill">REST API</div>
+        <div class="tech-pill">GitHub Pages</div>
       </div>
-    </div>
-    <div class="why-item reveal reveal-delay-1">
-      <div class="why-icon">💡</div>
-      <div>
-        <h4>Approche sur mesure</h4>
-        <p>Chaque projet est unique. Je prends le temps de comprendre votre activité avant d'écrire la première ligne de code.</p>
-      </div>
-    </div>
-    <div class="why-item reveal reveal-delay-2">
-      <div class="why-icon">⚡</div>
-      <div>
-        <h4>Réactivité</h4>
-        <p>Retours rapides, mises à jour régulières et disponibilité pour vos questions tout au long du projet.</p>
-      </div>
-    </div>
-    <div class="why-item reveal reveal-delay-3">
-      <div class="why-icon">💰</div>
-      <div>
-        <h4>Tarifs accessibles</h4>
-        <p>Les tarifs d'un indépendant sans les frais d'une agence. Devis transparent et adapté à votre budget.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="why-visual reveal">
-    <div class="section-tag" style="margin-bottom:.75rem;">// Stack technique</div>
-    <div class="tech-stack">
-      <div class="tech-pill">HTML5</div>
-      <div class="tech-pill">CSS3</div>
-      <div class="tech-pill">JavaScript</div>
-      <div class="tech-pill">WordPress</div>
-      <div class="tech-pill">WooCommerce</div>
-      <div class="tech-pill">Elementor</div>
-      <div class="tech-pill">Figma</div>
-      <div class="tech-pill">Git/GitHub</div>
-      <div class="tech-pill">Responsive</div>
-      <div class="tech-pill">SEO base</div>
-      <div class="tech-pill">REST API</div>
-      <div class="tech-pill">GitHub Pages</div>
-    </div>
-    <div class="divider" style="margin: 1.5rem 0;"></div>
-    <div style="display:flex;align-items:center;gap:.75rem;">
-      <span style="font-size:1.5rem;">🇫🇷</span>
-      <div>
-        <div style="font-weight:700;font-size:.9rem;">Île-de-France</div>
-        <div style="color:var(--muted);font-size:.8rem;">Disponible en présentiel ou à distance</div>
+      <div class="divider" style="margin: 1.5rem 0;"></div>
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <span style="font-size:1.5rem;">🇫🇷</span>
+        <div>
+          <div style="font-weight:700;font-size:.9rem;">Île-de-France</div>
+          <div style="color:var(--muted);font-size:.8rem;">Disponible en présentiel ou à distance</div>
+        </div>
       </div>
     </div>
   </div>
