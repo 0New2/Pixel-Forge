@@ -7,6 +7,8 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init("a5JjZKZsdib1Z8Ze4");</script>
 <style>
   :root {
     --navy: #090d1f;
@@ -1121,10 +1123,25 @@
   // ─── Form submit
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = '✓ Message envoyé !';
-    btn.style.background = 'linear-gradient(135deg, #00d4ff, #9b5de5)';
+    var form = e.target;
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
+
+    emailjs.send("service_2ayatbr", "template_q453h0k", {
+      nom:     form.querySelector('input[type="text"]').value,
+      email:   form.querySelector('input[type="email"]').value,
+      tel:     'Non renseigné',
+      pack:    form.querySelector('select').value,
+      message: form.querySelector('textarea').value
+    }).then(function() {
+      btn.textContent = '✓ Message envoyé !';
+      btn.style.background = 'linear-gradient(135deg, #00d4ff, #9b5de5)';
+    }, function(error) {
+      btn.textContent = 'Erreur, réessayez';
+      btn.disabled = false;
+      console.error('EmailJS error:', error);
+    });
   }
 </script>
 </body>

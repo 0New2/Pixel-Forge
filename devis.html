@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pixel-Forge — Tarifs</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init("a5JjZKZsdib1Z8Ze4");</script>
 <style>
   :root {
     --navy: #090d1f;
@@ -391,6 +393,36 @@
   // Soumission
   document.getElementById('btn-send').addEventListener('click', function() {
     var prenom = document.getElementById('f-prenom').value.trim();
+    var nom    = document.getElementById('f-nom').value.trim();
     var email  = document.getElementById('f-email').value.trim();
+    var tel    = document.getElementById('f-tel').value.trim();
+    var pack   = document.getElementById('f-pack').value;
+    var msg    = document.getElementById('f-message').value.trim();
+
     document.getElementById('f-prenom').style.borderColor = prenom ? '' : '#ff4d8d';
-    document.getElementById('f-email').style.borderColor  = email  ? '' : '#ff4d8d'
+    document.getElementById('f-email').style.borderColor  = email  ? '' : '#ff4d8d';
+    if (!prenom || !email) return;
+
+    var btn = this;
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+
+    emailjs.send("service_2ayatbr", "template_q453h0k", {
+      nom:     prenom + ' ' + nom,
+      email:   email,
+      tel:     tel || 'Non renseigné',
+      pack:    pack || 'Non renseigné',
+      message: msg || 'Aucun message'
+    }).then(function() {
+      document.getElementById('confirm-prenom').textContent = prenom;
+      document.getElementById('confirm').classList.add('show');
+      btn.style.display = 'none';
+    }, function(error) {
+      btn.textContent = 'Erreur, réessayez';
+      btn.disabled = false;
+      console.error('EmailJS error:', error);
+    });
+  });
+</script>
+</body>
+</html>
