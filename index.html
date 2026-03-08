@@ -1132,4 +1132,11 @@
   // ─── Form submit
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('butto
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Message envoyé !';
+    btn.style.background = 'linear-gradient(135deg, #00d4ff, #9b5de5)';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
